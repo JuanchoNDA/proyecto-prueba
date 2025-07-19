@@ -1,0 +1,445 @@
+/*este archivo es excluivo de los estilos del archivo Registro.php,
+ algunos de los estilos de aqui seran manejados por el archivo registro.js, por lo tanto no se veran reflejados aqui
+los siguientes estilos: 
+
+- Las etiquetas display:block; para mostrar mensajes de validacion de errores.
+
+Proyecto hecho por el grupo: Biteamⁿᵍ.
+
+*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+ /*
+================================================================================================
+                                Elementos generales.
+================================================================================================
+*/
+
+/*Variables*/
+:root{
+    /*Blanco/Negro*/
+    --color-negro: rgb(39, 36, 36);
+    --color-blanco: rgb(255, 255, 255);
+    /*colores*/
+    --color-VioletaOscuro: rgb(51, 40, 100);
+    --color-GrisClaro: rgb(172, 171, 171);
+    --color-rosaClaro: rgb(241, 197, 241);
+    --color-cian: rgb(202, 252, 248);
+    --color-vino: rgb(125, 76, 125);
+    --color-verdeAzuladoOscuro: rgb(47, 108, 103);
+    /*Degradados*/
+    --color-degradado: linear-gradient(to right, var(--color-rosaClaro), var(--color-cian));
+    --color-degradadoOscuro: linear-gradient(to right, var(--color-vino), var(--color-verdeAzuladoOscuro));
+    /*tamaño letra*/
+    --fuente-titulo: 2.2rem;
+    --fuente-subtitulo: 1.5rem;
+    --fuente-contenido: 1rem;
+    --fuente-grande: 2.5rem;
+    --fuente-chica: 0.7rem;
+    /*Estilo de Fuente*/
+    --estiloFuente-principal: 'Inter', sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-degradado);
+}
+.contenidoPrincipal{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 70vh;
+    width: 50vw;
+    border-radius: 10px;
+    background-color: var( --color-blanco);
+    box-shadow: 5px  5px 15px rgba(0, 0, 0, 0.4);
+}
+form{
+    margin-top: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.contenidoPrincipal p{
+    font-family: var(--estiloFuente-principal);
+}
+h1{
+    font-size: var(--fuente-grande);
+    font-family: var(--estiloFuente-principal);
+    color: var(--color-VioletaOscuro); 
+}
+/*
+================================================================================================
+                                Pasos del formulario.
+================================================================================================
+*/
+.contenedorPasos {
+   display: flex;
+   width: 90%;
+   height: 10vh;
+   justify-content: center;
+   align-items: center;
+}
+
+.contenedorPasos div{
+    height: 1rem;
+    border-top:1px solid var( --color-VioletaOscuro);
+    border-bottom:1px solid var( --color-VioletaOscuro);
+    width: 90%;
+}
+.contenedorPasos p{
+    font-family: var(--estiloFuente-principal);
+    color: var(--color-VioletaOscuro); 
+}
+.contenedorUno{
+    background-color: var(--color-VioletaOscuro);
+}
+/* Elementos del paso 1 */
+.Paso1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5vh;
+    width: 100%;
+}
+.Paso1 input{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--color-negro);
+    width: 90%;
+}
+.nameSpan{
+    font-family: var(--estiloFuente-principal);
+    font-size: var(--fuente-contenido);
+    color: var(--color-VioletaOscuro);
+}
+.spanEmptyName{
+    display: none;
+}
+.nombreLabel{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.nombreLabel span{
+    width: 90%;
+}
+.apellidoSpan{
+    font-family: var(--estiloFuente-principal);
+    font-size: var(--fuente-contenido);
+    color: var(--color-VioletaOscuro);
+}
+.spanEmptyLastName{
+    display: none;
+}
+.apellidoLabel{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 15%;
+}
+.apellidoLabel span{
+    width: 90%;
+}
+/* Elementos del paso 2 */
+.Paso2{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 5vh;
+}
+.Paso2 input{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--color-negro);
+    width: 90%;
+}
+.userSpan{
+    font-family: var(--estiloFuente-principal);
+    font-size: var(--fuente-contenido);
+    color: var(--color-VioletaOscuro);
+}
+.spanUsuario{
+    display: none;
+}
+.usuarioLabel{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.usuarioLabel span{
+    width: 90%;
+}
+.userPass{
+    font-family: var(--estiloFuente-principal);
+    font-size: var(--fuente-contenido);
+    color: var(--color-VioletaOscuro);
+}
+.spanContra{
+    display: none;
+}
+.contraLabel{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.contraLabel span{
+    width: 90%;
+}
+.spanRepeat{
+    font-family: var(--estiloFuente-principal);
+    font-size: var(--fuente-contenido);
+    color: var(--color-VioletaOscuro);
+}
+.spanRepetir{
+    display: none;
+}
+.repetirLabel{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 15%;
+}
+.repetirLabel span{
+    width: 90%;
+}
+.noCoinciden{
+    display: none;
+}
+/* Elementos del paso 3 */
+.Paso3{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5vh;
+    width: 100%;
+}
+.Paso3 input{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--color-negro);
+    width: 90%;
+}
+.emailSpan{
+    font-family: var(--estiloFuente-principal);
+    font-size: var(--fuente-contenido);
+    color: var(--color-VioletaOscuro);
+}
+.emailVacio{
+    display: none;
+}
+.emailLabel{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.emailLabel span{
+    width: 90%;
+}
+.telefonoSpan{
+    font-family: var(--estiloFuente-principal);
+    font-size: var(--fuente-contenido);
+    color: var(--color-VioletaOscuro);
+}
+.telefonoVacio{
+    display: none;
+}
+.telefonoLabel{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 15%;
+}
+.telefonoLabel span{
+    width: 90%;
+}
+/* Elementos del paso 4 */
+.Paso4{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2vh;
+    width: 100%;
+}
+.Paso4 input{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--color-negro);
+    width: 90%;
+}
+.spanDepto{
+    font-family: var(--estiloFuente-principal);
+    font-size: var(--fuente-contenido);
+    color: var(--color-VioletaOscuro);
+}
+.deptoVacio{
+    display: none;
+}
+.deptoLabel{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.deptoLabel span{
+    width: 90%;
+}
+.spanCiudad{
+    font-family: var(--estiloFuente-principal);
+    font-size: var(--fuente-contenido);
+    color: var(--color-VioletaOscuro);
+}
+.ciudadVacia{
+    display: none;
+}
+.ciudadLabel{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.ciudadLabel span{
+    width: 90%;
+}
+.spanLocalidad{
+    font-family: var(--estiloFuente-principal);
+    font-size: var(--fuente-contenido);
+    color: var(--color-VioletaOscuro);
+}
+.localVacia{
+    display: none;
+}
+.localLabel{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.localLabel span{
+    width: 90%;
+}
+.spanCalle{
+    font-family: var(--estiloFuente-principal);
+    font-size: var(--fuente-contenido);
+    color: var(--color-VioletaOscuro);
+}
+.calleVacia{
+    display: none;
+}
+.calleLabel{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.calleLabel span{
+    width: 90%;
+}
+.spanPuerta{
+    font-family: var(--estiloFuente-principal);
+    font-size: var(--fuente-contenido);
+    color: var(--color-VioletaOscuro);
+}
+.puertaVacia{
+    display: none;
+}
+.puertaLabel{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 10%;
+}
+.puertaLabel span{
+    width: 90%;
+}
+/* Elementos del paso Confirmar */
+.confirmar{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    gap: 3vh;
+}
+.confirmar input{
+    width: 90%;
+    border: none;
+    outline: none;
+    color: var(--color-blanco);
+    background-color: var(--color-VioletaOscuro);
+    height: 3vh;
+}
+.Botones {
+    position: absolute;
+    top: 95%;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+.Botones button{
+    background-color: var(--color-VioletaOscuro);
+    color: var(--color-blanco);
+    font-family: var(--estiloFuente-principal);
+    border: none;
+    outline: none;
+    width: 20%;
+}
+/*
+================================================================================================
+                                Adaptacion a pantallas pequeñas.
+================================================================================================
+*/
+@media (max-width: 1000px) {
+    .contenidoPrincipal{
+        width: 90vw;
+    }
+    .Botones button{
+    width: 40%;
+}
+}
+@media (max-width: 320px) {
+    .contenidoPrincipal{
+        width: 100%;
+    }
+    body{
+        margin: 0;
+    }
+}
+@media (max-height: 600px) {
+    body{
+        margin: 0;
+    }
+    .contenidoPrincipal{
+        height: 100%;
+        border-radius: 0px;
+    }
+}

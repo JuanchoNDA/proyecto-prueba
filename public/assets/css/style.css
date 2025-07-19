@@ -1,0 +1,772 @@
+/*este archivo es excluivo de los estilos del archivo index.php el cual es la pagina principal del proyecto
+en cuanto a funciones algunos de los estilos de aqui seran manejados por el archivo script.js, por lo tanto no se veran reflejados aqui
+los siguientes estilos: 
+
+- La etiqueta display:block; para mostrar el menu depegable de .ventanaFiltro.
+- La etiqueta display:block; para mostrar el menu depegable de .ventanaAjustes.
+
+Proyecto hecho por el grupo: Biteamⁿᵍ.
+
+*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/*
+  ===============================================================================================================
+                                     estiado de cuerpo general
+  ===============================================================================================================
+*/
+
+/*Quito todos los margenes.*/
+*{
+margin: 0;
+}
+html, body {
+        overflow-x: hidden;
+    }
+/*Variables*/
+:root{
+    /*Blanco/Negro*/
+    --color-negro: rgb(39, 36, 36);
+    --color-blanco: rgb(255, 255, 255);
+    /*colores*/
+    --color-VioletaOscuro: rgb(51, 40, 100);
+    --color-GrisClaro: rgb(172, 171, 171);
+    --color-rosaClaro: rgb(241, 197, 241);
+    --color-cian: rgb(202, 252, 248);
+    --color-vino: rgb(125, 76, 125);
+    --color-verdeAzuladoOscuro: rgb(47, 108, 103);
+    /*Degradados*/
+    --color-degradado: linear-gradient(to right, var(--color-rosaClaro), var(--color-cian));
+    --color-degradadoOscuro: linear-gradient(to right, var(--color-vino), var(--color-verdeAzuladoOscuro));
+    /*tamaño letra*/
+    --fuente-titulo: 2.2rem;
+    --fuente-subtitulo: 1.5rem;
+    --fuente-contenido: 1rem;
+    --fuente-grande: 2.5rem;
+    --fuente-chica: 0.7rem;
+    /*Estilo de Fuente*/
+    --estiloFuente-principal: 'Inter', sans-serif;
+}
+/*aca le di una altura de 250vh (viewport height) que basicamente es2.5 veces la altura de la pantalla, es lo que va a ocupar el contenido principal.*/
+body {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    align-items: center;       
+    background-color: var(--color-blanco);
+}
+
+/*header color blanco sombreado y con posicion fija en la pantalla.*/
+header{
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: var(--color-blanco);
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    height: 5vh;
+    width: 100%;
+    justify-content: space-between;
+    z-index: 1000;
+}
+/*ordeno el main en columna, ocupa todo el ancho de la pantalla y 2.5 veces el alto del viewport*/
+main {
+    background-color: var(--color-blanco);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 225vh;
+    align-items: center;
+}
+
+footer{
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    background: var(--color-degradado);
+    width: 100%;
+    height: 25vh;
+    display: flex;
+    place-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2vh;
+}
+/*
+  ===============================================================================================================
+                                     Elementos del Header
+  ===============================================================================================================
+*/
+
+/*elementos del header*/
+.ventanaAjuste{
+    display: none;
+    position: fixed;
+    margin-top: 5vh;
+    margin-left: -50vw;
+    z-index: 1;
+    width: 50vw;
+    height: 100vh;
+    gap: 5vh;
+    background-color: var(--color-blanco);
+
+}
+.ventanaAjuste div{
+    border-right: 1px solid var(--color-VioletaOscuro);
+    background: var(--color-degradado);
+
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5vh;
+}
+.ventanaAjuste div button{
+    width: 30vw;
+    border: none;
+    height: 3vh;
+    background-color: var(--color-VioletaOscuro);
+    color: var(--color-blanco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ventanaTema{
+    position: fixed;
+    background-color: var(--color-blanco);
+    margin-top: 36vh;
+    height: 10vh;
+    width: 30vw;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 1px solid var(--color-VioletaOscuro);
+
+}
+.ventanaTema input{
+    width: 100%;
+    height: 50%;
+    border: none;
+    outline: none;
+}
+.ventanaTema input:hover{
+    background-color: var(--color-rosaClaro);
+}
+.ventanaIdioma{
+    position: fixed;
+    background-color: var(--color-blanco);
+    margin-top: 4vh;
+    height: 10vh;
+    width: 30vw;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 1px solid var(--color-VioletaOscuro);
+
+}
+.ventanaIdioma input{
+    width: 100%;
+    height: 32.5%;
+    border: none;
+    outline: none;
+}
+.ventanaIdioma input:hover{
+    background-color: var(--color-rosaClaro);
+}
+.ventanaFiltro{
+    display: none;
+    position: fixed;
+    margin-top: 5vh;
+    margin-right: -50vw;
+    z-index: 1;
+    width: 50vw;
+    height: 100vh;
+    gap: 5vh;
+    background-color: var(--color-blanco);
+}
+.ventanaFiltro div{
+    border-left: 1px solid var(--color-VioletaOscuro);
+    background: var(--color-degradado);
+
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5vh;
+}
+.filtrosForm{
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    align-items: center;
+    height: 50vh;
+}
+.filtrosForm input{
+    width: 30vw;
+    outline: none;
+    border: none; 
+    border-bottom: 1px solid var(--color-VioletaOscuro);
+    height: 3vh;
+}
+.filtrosForm p{
+    margin-top: 6vh;
+    color: var(--color-VioletaOscuro);
+    font-size: var(--fuente-contenido);
+    font-family: var(--estiloFuente-principal);
+}
+.botonFiltro{
+    margin-top: 6vh;
+    height: 3vh;
+    background-color: var(--color-VioletaOscuro);
+    color: var(--color-blanco);
+    border: none;
+}
+
+.opcionesUsuario{ 
+    margin-right: 2%;
+}
+.opcionesUsuario ul{
+    list-style: none;
+    display: flex;
+    gap: 3vw;
+}
+.opcionesUsuario button{
+    background-color: transparent;
+
+    height: 3vh;
+    width: 3vh;
+    border: none;
+}
+.opcionesUsuario .opcionCuenta{
+    background-image: url("../img/SVGs/Usuario.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.opcionFiltro{
+    height: 3vh;
+    width: 3vw;
+
+    background-color: transparent;
+    border: none;
+
+    background-image: url("../img/SVGs/Filtro.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.ventanaFiltro h4{
+    font-family: var(--estiloFuente-principal);
+    font-size: var(--fuente-contenido);
+}
+.opcionCarrito{
+    background-image: url("../img/SVGs/Carrito.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.opcionAjuste{
+    height: 3vh;
+    width: 3vw;
+
+    background-color: transparent;
+    border: none;
+    margin-left: 2vw;
+
+    background-image: url("../img/SVGs/Ajutes.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+/*Buscador*/
+.cajaBuscador{
+    position: relative;
+    border: 1px solid var(--color-VioletaOscuro);
+    border-radius: 10px;
+
+    display: flex;
+    place-content: center;
+    align-items: center;
+    height: 3vh;
+    margin-right: 7%;
+    width: 20vw;
+    justify-content: space-between;
+}
+.botonBucador{
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    justify-content: flex-end;
+    right: 2%;
+    bottom: 2%;
+    
+    background-image: url("../img/SVGs/Buscador.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    height:3vh;
+    width: 3vw;
+}
+.inputBuscador{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 17vw;
+}
+.logoBox{
+    background-image: url("../img/Logo/LogoAColor.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: transparent;
+
+    height: 3.5vh;
+    width: 10vw;
+}
+.logoAjuste{
+    background-image: url("../img/Logo/LogoAColor.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: transparent;
+
+    margin-top: -10vh;
+    z-index: 1;
+    height: 10vh;
+    width: 20vw;
+}
+.opcionCuentaUsr{
+    color: var(--color-VioletaOscuro);
+    font-size: var(--fuente-contenido);
+    font-family: var(--estiloFuente-principal);
+}
+.cuenta button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cuentaMobile button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*
+  ===============================================================================================================
+                                     Elementos del main
+  ===============================================================================================================
+*/
+.bannerBienvenida{
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    background: var(--color-degradado);
+    color: var(--color-VioletaOscuro);
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5vh;
+    gap: 2vh;
+}
+.bannerBienvenida h1{
+    font-family: var(--estiloFuente-principal);
+    font-size: var(--fuente-titulo);
+    display: flex;
+    justify-content: center;
+}
+.bannerBienvenida p{
+    font-family: var(--estiloFuente-principal);
+    font-size: var(--fuente-contenido);
+    display: flex;
+    justify-content: center;
+}
+.ocultarContenidoPrincipal{
+    display: none;
+}
+.navMobile{
+    display: none;
+}
+.catalogoPinturas{
+    margin-top: 3vh;
+    height: 68vh;
+    width: 95vw;
+}
+.categoriaMaterial{
+    height: 49%;
+    display: flex;
+}
+.categoriaINTEXT{
+    height:49%;
+    display: flex;
+    margin-top: 1%;
+}
+.metales{
+    background-image: url("../img/Otros/metal.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-right: 1%;
+    height: 100%;
+    width: 60%;
+    display: flex;
+    place-content: center;
+    align-items: flex-start;
+}
+.metales p{
+    font-size: var(--fuente-grande);
+    font-family: var(--estiloFuente-principal);
+    width: 100%;
+    color: var(--color-blanco);
+    background: linear-gradient(to right, var(--color-VioletaOscuro), transparent);
+    opacity: 0.8;
+}
+@media (min-width: 750px){
+    .metales{
+        background-image: url("../img/Otros/metalMedio.jpeg");
+    }
+}
+@media (min-width: 1350px){
+    .metales{
+        background-image: url("../img/Otros/metalMax.jpeg");
+    }
+}
+.maderas{
+    background-image: url("../img/Otros/madera.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    place-content: center;
+    align-items: flex-start;
+
+    height: 100%;
+    width: 40%;
+}
+.maderas p{
+    font-size: var(--fuente-grande);
+    font-family: var(--estiloFuente-principal);
+    width: 100%;
+    color: var(--color-blanco);
+    background: linear-gradient(to right, var(--color-VioletaOscuro), transparent);
+    opacity: 0.8;
+}
+.exterior{
+    background-image: url("../img/Otros/exterior.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-left: 1%;
+    display: flex;
+    place-content: center;
+    align-items: flex-start;
+
+    height: 100%;
+    width: 60%;
+}
+.exterior p{
+    font-size: var(--fuente-grande);
+    font-family: var(--estiloFuente-principal);
+    width: 100%;
+    color: var(--color-blanco);
+    background: linear-gradient(to right, var(--color-VioletaOscuro), transparent);
+    opacity: 0.8;
+}
+.interior{
+    background-image: url("../img/Otros/interior.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    place-content: center;
+    align-items: flex-start;
+
+    height: 100%;
+    width: 40%;
+}
+.interior p{
+    font-size: var(--fuente-grande);
+    font-family: var(--estiloFuente-principal);
+    width: 100%;
+    color: var(--color-blanco);
+    background: linear-gradient(to right, var(--color-VioletaOscuro), transparent);
+    opacity: 0.8;
+}
+.cajaArticulos{
+    height: 120vh;
+    background-color: var(--color-blanco);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+    margin-top: 3vh;
+    width: 95vw;
+
+    display: flex;
+    flex-direction: column;
+}
+h2{
+    margin-top: 3vh;
+    width: 90vw;
+    display: flex;
+    place-content: center;
+    font-size: var(--fuente-subtitulo);
+    font-family: var(--estiloFuente-principal);
+}
+.articulos{
+    height: 105vh;
+    border-bottom: 2px solid var(--color-blanco);
+}
+.moverme{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 3vw;
+    margin-right: 3vw;
+}
+.moverme button{
+    border: none;
+    background-color: var(--color-VioletaOscuro);
+    color: var(--color-blanco);
+
+    width: 10vw;
+    height: 3vh;
+    margin-top: 3vh;
+    border-radius: 10px;
+}
+/*
+  ===============================================================================================================
+                                     Elementos del Footer
+  ===============================================================================================================
+*/
+/*Estlilos relacionados a redes sociales*/
+.redesSociales{
+    display: flex;
+    place-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2vh;
+    margin-bottom: 1vh;
+}
+.redesSociales ul{
+display: flex;
+list-style: none;
+gap: 3vw;
+}
+.redInstagram{
+    background-image: url("../img/SVGs/instagram.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    height: 3vh;
+    width: 3vw;
+}
+.redFacebook{
+    background-image: url("../img/SVGs/Facebook.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    height: 3vh;
+    width: 3vw;
+}
+.redX{
+    background-image: url("../img/SVGs/X.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    height: 3vh;
+    width: 3vw;
+}
+.redesSociales p{
+    font-size: var(--fuente-subtitulo);
+    font-family: var(--estiloFuente-principal);
+    font-style: inherit;
+    margin-left: 2%;
+}
+/*Estilado de links extras asi como de su seccion*/
+.otros{
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+}
+.otros a{
+    font-size: var(--fuente-contenido);
+    font-family: var(--estiloFuente-principal);
+    text-decoration: none;
+    color: var(--color-VioletaOscuro);
+}
+footer p{
+    font-size: var(--fuente-contenido);
+    font-family: var(--estiloFuente-principal);
+}
+/*
+  ===============================================================================================================
+                                     MEDIA QUERY para adaptacion a pantallas pequeñas.
+  ===============================================================================================================
+*/
+@media (max-width: 900px){
+    .cajaBuscador{
+        width: 50vw;
+        margin-right: 0%;
+    }
+    .inputBuscador{
+        width: 40vw;
+    }
+    .carrito{
+        display: none;
+    }
+    .cuenta{
+        display: none;
+    }
+    .opcionAjuste{
+        width: 7vw;
+    }
+    .botonBucador{
+        width: 7vw;
+    }
+    footer{
+        margin-bottom: 5vh;
+    }
+    .navMobile{
+        background-color: var(--color-blanco);
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+
+        display: flex;
+        place-content: center;
+        align-items: center;
+        z-index: 9999;
+        position: fixed;
+        bottom: 0;
+        height: 5vh;
+        width: 100vw;
+    }
+    .navMobile nav{
+        width: 75vw;
+    }
+    .navMobile ul{
+        background-color: transparent;
+        display: flex;
+        place-content: center;
+        justify-content: space-between;
+        list-style: none;
+        margin-left: -12vw;
+    }
+    .opcionHomeMobile{
+        background-color: transparent;
+        border: none;
+
+        height: 3vh;
+        width: 10vw;
+
+        background-image: url("../img/SVGs/home.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+    .opcionCarritoMobile{
+        background-color: transparent;
+        border: none;
+
+        height: 3vh;
+        width:10vw;
+
+        background-image: url("../img/SVGs/Carrito.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+    .opcionCuentaMobile{
+        background-color: transparent;
+        border: none;
+
+        height: 3vh;
+        width: 10vw;
+
+        background-image: url("../img/SVGs/Usuario.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+    .redInstagram{
+        width: 7vw;
+    }
+    .redX{
+        width: 7vw;
+    }
+    .redFacebook{
+        width: 7vw;
+    }
+    .bannerBienvenida h1{
+        font-size: var(--fuente-subtitulo);
+        width: 90%;
+    }
+    .bannerBienvenida p{
+        font-size: var(--fuente-contenido);
+        width: 90%;
+    }
+    .logoBox{
+    height: 2.5vh;
+    width: 18vw;
+}
+.redesSociales p{
+    font-style: var(--estiloFuente-principal);
+    font-size: var(--fuente-contenido);
+    margin-left: 7vw;
+}
+main{
+    height: 220vh;
+}
+.moverme button{
+    width: 25vw;
+}
+.ventanaAjuste{
+    margin-left: -20vw;
+    width: 80vw;
+}
+.ventanaFiltro{
+    margin-right: -20vw;
+    width: 80vw;
+    height: 90vh;
+}
+.ventanaIdioma{
+    width: 60vw;
+}
+.ventanaAjuste div button{
+    width: 60vw;
+}
+.filtrosForm input{
+    width: 60vw;
+}
+.ventanaTema{
+    width: 60vw;
+}
+.logoAjuste{
+    height: 10vh;
+    width:60vw;
+}
+.maderas p{
+    font-size: var(--fuente-subtitulo);
+}
+.metales p{
+    font-size: var(--fuente-subtitulo);
+}
+.interior p{
+    font-size: var(--fuente-subtitulo);
+}
+.exterior p{
+    font-size: var(--fuente-subtitulo);
+}
+.otros a{
+    font-size: var(--fuente-chica);
+}
+footer p{
+    font-size: var(--fuente-chica);
+}
+}

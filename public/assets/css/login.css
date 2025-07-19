@@ -1,0 +1,152 @@
+/*este archivo es excluivo de los estilos del archivo login.php,
+ algunos de los estilos de aqui seran manejados por el archivo login.js, por lo tanto no se veran reflejados aqui
+los siguientes estilos: 
+
+- Las etiquetas display:block; para mostrar mensajes de validacion de errores.
+
+Proyecto hecho por el grupo: Biteamⁿᵍ.
+
+*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+ /*
+================================================================================================
+                                Elementos generales.
+================================================================================================
+*/
+
+/*Variables*/
+:root{
+    /*Blanco/Negro*/
+    --color-negro: rgb(39, 36, 36);
+    --color-blanco: rgb(255, 255, 255);
+    /*colores*/
+    --color-VioletaOscuro: rgb(51, 40, 100);
+    --color-GrisClaro: rgb(172, 171, 171);
+    --color-rosaClaro: rgb(241, 197, 241);
+    --color-cian: rgb(202, 252, 248);
+    --color-vino: rgb(125, 76, 125);
+    --color-verdeAzuladoOscuro: rgb(47, 108, 103);
+    /*Degradados*/
+    --color-degradado: linear-gradient(to right, var(--color-rosaClaro), var(--color-cian));
+    --color-degradadoOscuro: linear-gradient(to right, var(--color-vino), var(--color-verdeAzuladoOscuro));
+    /*tamaño letra*/
+    --fuente-titulo: 2.2rem;
+    --fuente-subtitulo: 1.5rem;
+    --fuente-contenido: 1rem;
+    --fuente-grande: 2.5rem;
+    --fuente-chica: 0.7rem;
+    /*Estilo de Fuente*/
+    --estiloFuente-principal: 'Inter', sans-serif;
+}
+*{
+    margin: 0;
+}
+body{
+    height: 100vh;
+    background: linear-gradient(to right, var(--color-rosaClaro), var(--color-cian));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section{
+    height: 70vh;
+    width: 50vw;
+    background-color: var(--color-blanco);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+    gap: 6vh;
+}
+h1{
+    font-family: var(--estiloFuente-principal);
+    font-size: var(--fuente-titulo);
+    color: var(--color-VioletaOscuro);
+}
+.formulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:  3vh;
+    width: 100%;
+}
+.formulario label{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.usuario, .contra{
+width: 90%;
+border: none;
+outline: none;
+border-bottom: 1px solid var(--color-negro);
+}
+.usuarioLabel{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.usuarioLabel span{
+    width: 90%;
+}
+.contraLabel{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.contraLabel span{
+    width: 90%;
+}
+.btnEnviar{
+    width: 90%;
+    border: none;
+    outline: none;
+    background-color: var(--color-VioletaOscuro);
+    color: var(--color-blanco);
+    height: 3vh;
+}
+.spanUsuario{
+    font-family: var(--estiloFuente-principal);
+    font-size: var(--fuente-contenido);
+    color: var(--color-VioletaOscuro);
+}
+.spanContra{
+    font-family: var(--estiloFuente-principal);
+    font-size: var(--fuente-contenido);
+    color: var(--color-VioletaOscuro);
+}
+ /*
+================================================================================================
+                               Adaptación a pantallas pequeñas.
+================================================================================================
+*/
+@media (max-width: 1000px) {
+    section{
+        width: 90vw;
+    }
+}
+@media (max-width: 320px) {
+    section{
+        width: 100%;
+    }
+    body{
+        margin: 0;
+    }
+}
+@media (max-height: 600px) {
+    body{
+        margin: 0;
+    }
+    section{
+        height: 100%;
+        border-radius: 0px;
+    }
+}

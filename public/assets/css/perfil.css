@@ -1,0 +1,503 @@
+/* Archivo exclusivo de los esilos de perfil.php*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+ /*
+================================================================================================
+                                Elementos generales.
+================================================================================================
+*/
+
+/*Variables*/
+:root{
+    /*Blanco/Negro*/
+    --color-negro: rgb(39, 36, 36);
+    --color-blanco: rgb(255, 255, 255);
+    /*colores*/
+    --color-VioletaOscuro: rgb(51, 40, 100);
+    --color-GrisClaro: rgb(172, 171, 171);
+    --color-rosaClaro: rgb(241, 197, 241);
+    --color-cian: rgb(202, 252, 248);
+    --color-vino: rgb(125, 76, 125);
+    --color-verdeAzuladoOscuro: rgb(47, 108, 103);
+    /*Degradados*/
+    --color-degradado: linear-gradient(to right, var(--color-rosaClaro), var(--color-cian));
+    --color-degradadoOscuro: linear-gradient(to right, var(--color-vino), var(--color-verdeAzuladoOscuro));
+    /*tamaño letra*/
+    --fuente-titulo: 2.2rem;
+    --fuente-subtitulo: 1.5rem;
+    --fuente-contenido: 1rem;
+    --fuente-grande: 2.5rem;
+    --fuente-chica: 0.7rem;
+    /*Estilo de Fuente*/
+    --estiloFuente-principal: 'Inter', sans-serif;
+}
+/* Quito margenes */
+*{
+    margin: 0;
+}
+/* oculto elementos que se salgan del body o el html */
+html, body {
+        overflow-x: hidden;
+    }
+body{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: var(--color-degradado);
+    gap: 3vh;
+}
+ /*
+================================================================================================
+                                Elementos del encabezado.
+================================================================================================
+*/
+header{
+    height: 16vh;
+    background-color: var(--color-blanco);
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.encabezado{
+    display: flex;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+    justify-content: space-between;
+}
+.fotoPerfil{
+    background-color: var(--color-rosaClaro);
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    color: var(--color-VioletaOscuro);
+    font-size: var(--fuente-titulo);
+    font-family: var(--estiloFuente-principal);
+}
+h1{
+    font-family: var(--estiloFuente-principal);
+    color: var(--color-VioletaOscuro);
+}
+.userHeader{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 3vw;
+}
+.IndicadorPagina{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, var(--color-vino), transparent, transparent);
+    font-family: var(--estiloFuente-principal);
+    font-size: var(--fuente-contenido);
+    color: var(--color-VioletaOscuro);
+}
+ /*
+================================================================================================
+                                Elementos del cuerpo.
+================================================================================================
+*/
+.cuerpo{
+    height: 75vh;
+    width: 95%;
+    background-color: var(--color-blanco);
+    display: flex;
+}
+.menu{
+    height: 100%;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 6vh;
+    border-right: 1px solid var(--color-GrisClaro);
+}
+.menu button{
+    outline: none;
+    border: none;
+    height: 3vh;
+    width: 80%;
+    border-left: 1px solid var(--color-VioletaOscuro);
+    background-color: transparent;
+    font-family: var(--estiloFuente-principal);
+    color: var(--color-VioletaOscuro);
+    display: flex;
+    justify-content: space-between;
+}
+.menu span{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.menu .AcercaDe {
+    display: flex;
+    justify-content: center;
+    font-family: var(--estiloFuente-principal);
+    color: var(--color-VioletaOscuro);
+}
+h2{
+   font-family: var(--estiloFuente-principal);
+   color: var(--color-VioletaOscuro); 
+}
+.opcionAjusteMobile{
+    display: none;
+}
+.navMobile{
+    display: none;
+}
+.infoUsuario{
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 6vh;
+}
+.infoUsuario span{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    font-family: var(--estiloFuente-principal);
+    color: var(--color-VioletaOscuro);
+    border-bottom: 1px dashed var(--color-GrisClaro);
+}
+.mensajesUsuario{
+    width: 80%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3vh;
+}
+.editarUsuario{
+    width: 80%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3vh;
+}
+.editarUsuario span{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    font-family: var(--estiloFuente-principal);
+    color: var(--color-VioletaOscuro);
+    border-bottom: 1px   dashed var(--color-GrisClaro);
+}
+.editarUsuario button{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 0.8rem;
+    background-image: url("../img/SVGs/edit.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+h4{
+    font-size: var(--fuente-titulo);
+    font-family: var(--estiloFuente-principal);
+    color: var(--color-VioletaOscuro);
+}
+h5{
+    font-size: var(--fuente-titulo);
+    font-family: var(--estiloFuente-principal);
+    color: var(--color-VioletaOscuro);
+}
+.direccionUsuario{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 75%;
+    gap: 6vh;
+}
+.direccionUsuario h6{
+    font-size: var(--fuente-titulo);
+    font-family: var(--estiloFuente-principal);
+    color: var(--color-VioletaOscuro);
+
+}
+.direccionUsuario .cajaDireccion{
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--color-VioletaOscuro);
+    width: 80%;
+    height: 12vh;
+}
+.cajaDireccion div{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+.cajaDireccion p{
+    font-size: var(--fuente-contenido);
+    font-family: var(--estiloFuente-principal);
+    color: var(--color-VioletaOscuro);
+}
+.agregarDireccion{
+    border: 1px solid var(--color-VioletaOscuro);
+    width: 80%;
+    height: 12vh;
+    font-size: var(--fuente-titulo);
+    background-color: var(--color-blanco);
+    color: var(--color-VioletaOscuro);
+}
+.btnModificarDireccion{
+    outline: none;
+    background-color: transparent;
+    border: none;
+    height: 2rem;
+    width: 2rem;
+    background-image: url("../img/SVGs/edit.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+ /*
+================================================================================================
+                                Menú desplegable.
+================================================================================================
+*/
+.ventanaAjuste{
+    display: none;
+    position: fixed;
+    margin-left: -50vw;
+    z-index: 1;
+    width: 50vw;
+    height: 100vh;
+    gap: 5vh;
+    background-color: var(--color-blanco);
+
+}
+.ventanaAjuste div{
+    border-right: 1px solid var(--color-VioletaOscuro);
+    background: var(--color-degradado);
+
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5vh;
+}
+.ventanaAjuste div button{
+    width: 30vw;
+    border: none;
+    height: 3vh;
+    background-color: var(--color-VioletaOscuro);
+    color: var(--color-blanco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ventanaTema{
+    position: fixed;
+    background-color: var(--color-blanco);
+    margin-top: 36vh;
+    height: 10vh;
+    width: 30vw;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 1px solid var(--color-VioletaOscuro);
+
+}
+.ventanaTema input{
+    width: 100%;
+    height: 50%;
+    border: none;
+    outline: none;
+}
+.ventanaTema input:hover{
+    background-color: var(--color-rosaClaro);
+}
+.ventanaIdioma{
+    position: fixed;
+    background-color: var(--color-blanco);
+    margin-top: 4vh;
+    height: 10vh;
+    width: 30vw;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 1px solid var(--color-VioletaOscuro);
+
+}
+.ventanaIdioma input{
+    width: 100%;
+    height: 32.5%;
+    border: none;
+    outline: none;
+}
+.ventanaIdioma input:hover{
+    background-color: var(--color-rosaClaro);
+}
+ /*
+================================================================================================
+                                Adaptación a pantallas pequeñas.
+================================================================================================
+*/
+@media(max-width: 900px){
+    .cuerpo{
+    height: 70vh;
+    flex-direction: column;
+    margin-bottom: 6vh;
+}
+.infoUsuario{
+    width: 100%;
+    height: 90%;
+}
+.direccionUsuario{
+   width: 100%;
+   height: 90%;
+}
+.mensajesUsuario{
+    width: 100%;
+    height: 90%;
+}
+.editarUsuario{
+    width: 100%;
+    height: 90%;
+}
+    .menu .AcercaDe{
+        display: none;
+    }
+    .menu span{
+        display: none;
+    }
+    .menu{
+        height: 10%;
+        width: 100%;
+        gap: 6vw;
+        flex-direction: row;
+        border: none;
+        border-bottom: 1px solid var(--color-GrisClaro);
+    }
+    .menu button{
+    outline: none;
+    border: none;
+    width: 10%;
+    display: flex;
+    justify-content: space-between;
+}
+.inicio{
+    background-image: url("../img/SVGs/home.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.mensaje{
+    background-image: url("../img/SVGs/message.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.editar{
+    background-image: url("../img/SVGs/edit.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.direcciones{
+    background-image: url("../img/SVGs/map.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.ayuda{
+    background-image: url("../img/SVGs/help.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.logout{
+    background-image: url("../img/SVGs/logout.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.navMobile{
+        background-color: var(--color-blanco);
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+
+        display: flex;
+        place-content: center;
+        align-items: center;
+        z-index: 1;
+        position: fixed;
+        bottom: 0;
+        top: 95%;
+        left: 0;
+        height: 5vh;
+        width: 100vw;
+    }
+    .navMobile nav{
+        width: 75vw;
+    }
+    .navMobile ul{
+        background-color: transparent;
+        display: flex;
+        place-content: center;
+        justify-content: space-between;
+        list-style: none;
+        margin-left: -12vw;
+    }
+      .opcionHomeMobile{
+        background-color: transparent;
+        border: none;
+
+        height: 3vh;
+        width: 10vw;
+
+        background-image: url("../img/SVGs/home.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+    .opcionCarritoMobile{
+        background-color: transparent;
+        border: none;
+
+        height: 3vh;
+        width:10vw;
+
+        background-image: url("../img/SVGs/Carrito.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+    .opcionAjustesMobile{
+        background-color: transparent;
+        border: none;
+
+        height: 3vh;
+        width: 10vw;
+
+        background-image: url("../img/SVGs/Ajutes.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+}

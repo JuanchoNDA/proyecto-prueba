@@ -1,0 +1,301 @@
+ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/*este archivo es excluivo de los estilos del archivo carrito.php el cual es la pagina principal del proyecto
+en cuanto a funciones algunos de los estilos de aqui seran manejados por el archivo scriptCarrito.js, por lo tanto no se veran reflejados aqui
+los siguientes estilos: 
+
+- visibilidad del boton ajustes.
+
+Proyecto hecho por el grupo: Biteamⁿᵍ.
+
+*/
+/*Quito todos los margenes.*/
+*{
+margin: 0;
+}
+/*Variables*/
+:root{
+    /*Blanco/Negro*/
+    --color-negro: rgb(39, 36, 36);
+    --color-blanco: rgb(255, 255, 255);
+    /*colores*/
+    --color-VioletaOscuro: rgb(51, 40, 100);
+    --color-GrisClaro: rgb(172, 171, 171);
+    --color-rosaClaro: rgb(241, 197, 241);
+    --color-cian: rgb(202, 252, 248);
+    --color-vino: rgb(125, 76, 125);
+    --color-verdeAzuladoOscuro: rgb(47, 108, 103);
+    /*Degradados*/
+    --color-degradado: linear-gradient(to right, var(--color-rosaClaro), var(--color-cian));
+    --color-degradadoOscuro: linear-gradient(to right, var(--color-vino), var(--color-verdeAzuladoOscuro));
+    /*tamaño letra*/
+    --fuente-titulo: 2.2rem;
+    --fuente-subtitulo: 1.5rem;
+    --fuente-contenido: 1rem;
+    --fuente-grande: 2.5rem;
+    /*Estilo de Fuente*/
+    --estiloFuente-principal: 'Inter', sans-serif;
+}
+/*estilos del body*/
+body{
+    height: 100vh;
+    background: var(--color-degradado);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3vh;
+}
+/*estilos del main*/
+main{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+/*estilos del header*/
+header{
+    width: 95vw;
+    height: 6vh;
+    background-color: var(--color-blanco);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+H1{
+    color: var(--color-VioletaOscuro);
+    font-family: var(--estiloFuente-principal);
+    font-size: var(--fuente-grande);
+    margin-left: 3vw;
+}
+.opcionesUsuario ul{
+    list-style: none;
+    display: flex;
+    gap: 3vw;
+    margin-right: 3vw;
+}
+.opcionCuenta{
+    height: 3vh;
+    width: 3vw;
+
+    border: none;
+    background-color: transparent;
+    background-image: url("../img/SVGs/Usuario.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.opcionInicio{
+    height: 3vh;
+    width: 3vw;
+
+    border: none;
+    background-color: transparent;
+    background-image: url("../img/SVGs/home.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.opcionAjuste{
+    height: 3vh;
+    width: 3vw;
+
+    background-color: transparent;
+    border: none;
+
+    background-image: url("../img/SVGs/Ajutes.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+/*estilos del section*/
+.contenedorPrincipal{
+    height: 80vh;
+    width: 95vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: var(--color-blanco);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+}
+/*estilos del recibo del pedido*/
+.valorOrden{
+    height: 80vh;
+    width: 40vw;
+    height: 100%;
+    border-left: 1px solid var(--color-negro);
+}
+.resumen{
+    border-bottom: 1px solid var(--color-negro);
+}
+th{
+    font-size: var(--fuente-subtitulo);
+    font-family: var(--estiloFuente-principal);
+}
+.resumen tr{
+    height: 6vh;
+    width: 39vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.resumen td{
+    display: flex;
+    justify-content: space-between;
+}
+.tituloTabla tr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-VioletaOscuro);
+}
+.total tr {
+    height: 6vh;
+    width: 39vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.btnPagar{
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pagar{
+    width: 80%;
+    height: 3vh;
+    border: none;
+    outline: none;
+    color: var(--color-blanco);
+    background-color: var(--color-VioletaOscuro);
+    font-family: var(--estiloFuente-principal);
+}
+.importantSVG{
+    height: 1.5vh;
+    width: 1.5vw;
+    display: flex;
+    background-image: url("../img/SVGs/alert.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+/*estilos de los productos*/
+.productosCarrito{
+    height: 80vh;
+    width: 50vw;
+}
+.producto{
+    width: 100%;
+    height: 25%;
+}
+/*Estilos nav mobile*/
+.navMobile{
+display: none;
+}
+@media (max-width: 900px){
+    .navMobile{
+        background-color: var(--color-blanco);
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+
+        display: flex;
+        place-content: center;
+        align-items: center;
+        z-index: 1;
+        position: fixed;
+        bottom: 0;
+        height: 5vh;
+        width: 100vw;
+    }
+    .navMobile nav{
+        width: 75vw;
+    }
+    .navMobile ul{
+        background-color: transparent;
+        display: flex;
+        place-content: center;
+        justify-content: space-between;
+        list-style: none;
+        margin-left: -12vw;
+    }
+    header{
+        margin-top: -6vh;
+    }
+    .opcionCuentaMobile{
+    height: 3vh;
+    width: 10vw;
+    background-color: transparent;
+    border: none;
+
+    background-image: url("../img/SVGs/Usuario.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.opcionHomeMobile{
+    height: 3vh;
+    width: 10vw;
+
+    background-color: transparent;
+    border: none;
+
+    background-image: url("../img/SVGs/home.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.opcionAjusteMobile{
+    height: 3vh;
+    width: 10vw;
+
+    background-color: transparent;
+    border: none;
+
+    background-image: url("../img/SVGs/Ajutes.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.opcionesUsuario ul{
+    display: none;
+}
+.valorOrden{
+    height: 40vh;
+    width: 100%;
+    border-top: 1px solid var(--color-GrisClaro);
+}
+.contenedorPrincipal{
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.resumen tr{
+    width: 90vw;
+}
+.total tr {
+    width: 90vw;
+}
+.btnPagar{
+    width: 90vw;
+    margin-bottom: 2vh;
+}
+.productosCarrito{
+    height: 40vh;
+    width: 100%;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+}
+header{
+    display: flex;
+    justify-content: center;
+}
+
+H1{
+    font-size: var(--fuente-subtitulo);
+}
+
+.valorOrden{
+    border-left: none;
+}
+
+}
